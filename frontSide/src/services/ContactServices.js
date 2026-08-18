@@ -2,7 +2,7 @@ import axios from "axios";
 
 class Contact {
   create(formData) {
-    const url = "http://localhost:8000/api/submit";
+    const url = `${process.env.REACT_APP_API_URL}/api/submit`;
 
     const config = {
       headers: {
