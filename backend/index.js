@@ -13,6 +13,9 @@ mongoose.connect(process.env.MONGO_URL);
 const contact_route = require("./routes/contactRoutes");
 
 app.use("/api", contact_route);
+app.get("/", (req,res)=>{
+    res.send("Hello world");
+})
 
 app.listen(8000, function(){
     console.log("server is running");
