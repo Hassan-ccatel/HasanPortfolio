@@ -59,7 +59,8 @@ export default function Contact() {
     } catch (error) {
       console.log("STATUS:", error.response?.status);
       console.log("DATA:", error.response?.data);
-      console.log(error);
+      console.log("MESSAGE:", error.response?.data?.msg);
+      console.log("FULL ERROR:", error);
     }
 
   };
