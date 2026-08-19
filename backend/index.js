@@ -3,9 +3,15 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 
+// app.use(cors({
+//     origin: "*"
+// }));
+
 app.use(cors({
-    origin: "*"
-}));
+    origin: "https://hasan-portfolio-frontend.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}))
 
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGO_URL);
