@@ -56,12 +56,12 @@ export default function Contact() {
       if (turnstileRef.current) {
         turnstileRef.current.reset();
       }
-
+     setTimeout(() => {
+      setMessage("");
+     }, 3000);
     } catch (error) {
-      console.log("STATUS:", error.response?.status);
-      console.log("DATA:", error.response?.data);
-      console.log("MESSAGE:", error.response?.data?.msg);
-      console.log("FULL ERROR:", error);
+      
+      console.log(error);
     }
 
   };
