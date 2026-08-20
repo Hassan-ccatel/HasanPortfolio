@@ -8,6 +8,7 @@ import ContactServices from "../services/ContactServices";
 
 export default function Contact() {
   const [turnstileToken, setTurnstileToken] = useState("");
+  const [message, setMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,7 +40,7 @@ export default function Contact() {
     try {
       const response = await ContactServices.create(data);
       console.log("Server Response:", response.data);
-      alert("Message sent successfully!");
+      setMessage("Message sent successfully!");
 
       // Clear form
       setFormData({
@@ -109,6 +110,10 @@ export default function Contact() {
             </div>
 
             <button type="submit">Send Message <FaPaperPlane /></button>
+
+            {message && (
+              <p className="success-message">{message}</p>
+            )}
           </form>
 
           <div className="contact-details">

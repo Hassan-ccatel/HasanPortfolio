@@ -688,7 +688,44 @@ nav a.active {
   font-size: 12px;
   margin-top: 5px
 }
+.success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
+  min-width: 300px;
+  max-width: 90%;
+
+  padding: 25px 35px;
+
+  background: #fff;
+  color: #28a745;
+
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+  z-index: 9999;
+
+  animation: showMessage 0.3s ease-in-out;
+}
+
+@keyframes showMessage {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
 footer {
   border-top: 1px solid #1e293b;
   padding: 20px 0
