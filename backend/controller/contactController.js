@@ -19,8 +19,111 @@ const createContact = async (req, res) => {
         res.status(400).send({ success: false, msg: error.message });
     }
 }
+// ===============================
+// ADMIN LOGIN
+// ===============================
+
+const adminLogin = async (req, res) => {
+    try {
+
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).send({
+                success: false,
+                msg: "Email and password are required"
+            });
+        }
+
+
+        // Check admin email
+        if (email !== process.env.ADMIN_EMAIL) {
+            return res.status(401).send({
+                success: false,
+                msg: "Invalid email or password"
+            });
+        }
+
+
+        // Compare password
+        const passwordMatch = await bcrypt.compare(
+            password,
+            process.env.ADMIN_PASSWORD_HASH
+        );
+
+
+        if (!passwordMatch) {
+            return res.status(401).send({
+                success: false,
+                msg: "Invalid email or password"
+            });
+        }
+
+
+        // Create JWT
+        const token = jwt.sign(
+            {
+                email: process.env.ADMIN_EMAIL,
+                role: "admin"
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1d"
+            }
+        );
+
+
+        res.status(200).send({
+            success: true,
+            msg: "Login successful",
+            token
+        });
+
+    } catch (error) {
+
+        res.status(500).send({
+            success: false,
+            msg: error.message
+        });
+
+    }
+};
+
+
+// ===============================
+// GET CONTACT MESSAGES
+// ===============================
+
+const getMessages = async (req, res) => {
+    try {
+
+        const messages = await Contact.find()
+            .sort({ createdAt: -1 });
+
+
+        res.status(200).send({
+            success: true,
+            messages
+        });
+
+    } catch (error) {
+
+        res.status(500).send({
+            success: false,
+            msg: error.message
+        });
+
+    }
+};
+
+
+// ===============================
+// EXPORT
+// ===============================
 
 
 module.exports = {
-    createContact
+    createContact,
+    adminLogin,
+    getMessages
 }
