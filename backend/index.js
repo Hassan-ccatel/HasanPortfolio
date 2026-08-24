@@ -11,7 +11,8 @@ app.use(cors({
     origin: "https://hasan-portfolio-frontend.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
-}))
+    credentials: true
+}));
 
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGO_URL);
