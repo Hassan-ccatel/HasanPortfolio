@@ -8,7 +8,7 @@ const AdminMessages = () => {
   const fetchMessages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:9000/api/messages"
+        `${process.env.REACT_APP_API_URL}/api/messages`
       );
 
       if (response.data.success) {
