@@ -8,7 +8,7 @@ contact_route.use(bodyParser.urlencoded({extended: true}));
 
 const contactController = require("../controller/contactController");
 
-const adminAuth = require("../middleware/adminAuth");
+const adminAuth = require("../middlewer/adminAuth");
 
 contact_route.post("/submit", contactController.createContact);
 
