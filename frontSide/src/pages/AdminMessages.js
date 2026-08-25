@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminNavbar from "../components/AdminNavbar";
+import ContactServices from "../services/ContactServices";
 
 const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
@@ -9,14 +10,7 @@ const AdminMessages = () => {
     try {
       const token = localStorage.getItem("token");
       console.log("Token retrieved from localStorage:", token);
-      const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/admin/messages`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await ContactServices.adminMessages(token);
         console.log("Messages fetched successfully:", response.data);
       if (response.data.success) {
         setMessages(response.data.data);

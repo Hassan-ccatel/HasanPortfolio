@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ContactServices from "../services/ContactServices";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
@@ -10,18 +11,7 @@ const AdminLogin = () => {
   e.preventDefault();
 
   try {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/api/admin/login`,
-      {
-        email,
-        password,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await ContactServices.adminLogin({email, password});
 
     if (response.data.success) {
       localStorage.setItem("token", response.data.token);
