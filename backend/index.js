@@ -21,6 +21,14 @@ const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGO_URL);
 
 const contact_route = require("./routes/contactRoutes");
+app.post("/test-body", (req, res) => {
+    console.log("TEST BODY:", req.body);
+
+    res.json({
+        success: true,
+        body: req.body
+    });
+});
 
 app.use("/api", contact_route);
 app.get("/", (req,res)=>{
