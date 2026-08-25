@@ -14,6 +14,9 @@ app.use(cors({
     credentials: true
 }));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGO_URL);
 
@@ -24,6 +27,8 @@ app.get("/", (req,res)=>{
     res.send("Hello world");
 })
 
-app.listen(8000, function(){
-    console.log("server is running");
-});
+// app.listen(8000, function(){
+//     console.log("server is running");
+// });
+
+module.exports = app;
