@@ -29,36 +29,26 @@ const adminLogin = async (req, res) => {
         const { email, password } = req.body;
 
         if (!email || !password) {
-            return res.status(400).send({
-                success: false,
-                msg: "Email and password are required"
+            return res.status(400).send({ success: false, msg: "Email and password are required"
             });
         }
 
-
         // Check admin email
         if (email !== process.env.ADMIN_EMAIL) {
-            return res.status(401).send({
-                success: false,
-                msg: "Invalid email or password"
+            return res.status(401).send({ success: false, msg: "Invalid email or password"
             });
         }
 
 
         // Compare password
         const passwordMatch = await bcrypt.compare(
-            password,
-            process.env.ADMIN_PASSWORD_HASH
+            password, process.env.ADMIN_PASSWORD_HASH
         );
 
 
         if (!passwordMatch) {
-            return res.status(401).send({
-                success: false,
-                msg: "Invalid email or password"
-            });
+            return res.status(401).send({ success: false, msg: "Invalid email or password" });
         }
-
 
         // Create JWT
         const token = jwt.sign(
@@ -72,18 +62,13 @@ const adminLogin = async (req, res) => {
             }
         );
 
-
         res.status(200).send({
-            success: true,
-            msg: "Login successful",
-            token
+            success: true, msg: "Login successful", token
         });
 
     } catch (error) {
 
-        res.status(500).send({
-            success: false,
-            msg: error.message
+        res.status(500).send({ success: false, msg: error.message
         });
 
     }
@@ -97,20 +82,15 @@ const adminLogin = async (req, res) => {
 const getMessages = async (req, res) => {
     try {
 
-        const messages = await Contact.find()
-            .sort({ createdAt: -1 });
-
+        const messages = await Contact.find().sort({ createdAt: -1 });
 
         res.status(200).send({
-            success: true,
-            messages
+            success: true, messages
         });
 
     } catch (error) {
 
-        res.status(500).send({
-            success: false,
-            msg: error.message
+        res.status(400).send({ success: false, msg: error.message
         });
 
     }
