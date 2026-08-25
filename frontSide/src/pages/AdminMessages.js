@@ -7,10 +7,16 @@ const AdminMessages = () => {
 
   const fetchMessages = async () => {
     try {
+      const token = localStorage.getItem("token");
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/admin/messages`
+        `${process.env.REACT_APP_API_URL}/api/admin/messages`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
-
+        console.log("Messages fetched successfully:", response.data);
       if (response.data.success) {
         setMessages(response.data.data);
       }
