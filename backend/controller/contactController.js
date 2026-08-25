@@ -82,16 +82,13 @@ const adminLogin = async (req, res) => {
 const getMessages = async (req, res) => {
     try {
 
-        const messages = await Contact.find().sort({ createdAt: -1 });
+        const messages = await contact.find().sort({ createdAt: -1 });
 
-        res.status(200).send({
-            success: true, messages
-        });
+        res.status(200).send({ success: true, msg: "Messages retrieved successfully", data: messages});
 
     } catch (error) {
 
-        res.status(400).send({ success: false, msg: error.message
-        });
+        res.status(400).send({ success: false, msg: error.message });
 
     }
 };
