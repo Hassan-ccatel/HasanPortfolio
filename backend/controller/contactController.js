@@ -80,10 +80,10 @@ const adminLogin = async (req, res) => {
 // GET CONTACT MESSAGES
 // ===============================
 
-const getMessages = async (req, res) => {
+const adminMessages = async (req, res) => {
     try {
 
-        const messages = await Contact.find().sort({ createdAt: -1 });
+        const messages = await contact.find().sort({ createdAt: -1 });
 
         res.status(200).send({ success: true, msg: "Messages retrieved successfully", data: messages});
 
@@ -103,5 +103,5 @@ const getMessages = async (req, res) => {
 module.exports = {
     createContact,
     adminLogin,
-    getMessages
+    adminMessages
 }
