@@ -15,6 +15,11 @@ const AdminLogin = () => {
       {
         email,
         password,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
 
