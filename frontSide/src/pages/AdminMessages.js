@@ -8,11 +8,11 @@ const AdminMessages = () => {
   const fetchMessages = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/admin/messages`
+        `${process.env.REACT_APP_API_URL}/api/admin/messages`
       );
 
       if (response.data.success) {
-        setMessages(response.data.messages);
+        setMessages(response.data.data);
       }
     } catch (error) {
       console.log(error);
