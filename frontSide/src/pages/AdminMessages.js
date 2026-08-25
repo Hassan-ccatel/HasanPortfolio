@@ -8,6 +8,7 @@ const AdminMessages = () => {
   const fetchMessages = async () => {
     try {
       const token = localStorage.getItem("token");
+      console.log("Token retrieved from localStorage:", token);
       const response = await axios.get(
         `${process.env.REACT_APP_API_URL}/api/admin/messages`,
         {

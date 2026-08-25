@@ -6,19 +6,29 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const handleLogin = async (e) => {
+  e.preventDefault();
 
-    if (
-      email === "admin@gmail.com" &&
-      password === "123456"
-    ) {
+  try {
+    const response = await axios.post(
+      `${process.env.REACT_APP_API_URL}/api/admin/login`,
+      {
+        email,
+        password,
+      }
+    );
+
+    if (response.data.success) {
+      localStorage.setItem("token", response.data.token);
       localStorage.setItem("adminLoggedIn", "true");
+
       navigate("/admin/dashboard");
-    } else {
-      alert("Invalid email or password");
     }
-  };
+  } catch (error) {
+    console.log(error.response?.data || error.message);
+    alert("Invalid email or password");
+  }
+};
 
   return (
     <div className="admin-login">
