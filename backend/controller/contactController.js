@@ -65,10 +65,10 @@ const adminLogin = async (req, res) => {
         res.status(200).send({
             success: true, msg: "Login successful", token
         });
-
+        console.log("Admin logged in successfully");
     } catch (error) {
 
-        res.status(500).send({ success: false, msg: error.message
+        res.status(400).send({ success: false, msg: error.message
         });
 
     }
