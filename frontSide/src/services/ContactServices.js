@@ -18,7 +18,7 @@ class Contact {
     return axios.post(url, data);
   }
 
-  adminMessages(token) {
+  getMessages(token) {
     const url = `${process.env.REACT_APP_API_URL}/api/admin/messages`;
     const config = {
       headers: {
