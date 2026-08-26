@@ -13,7 +13,7 @@ const adminAuth = require("../middlewer/adminAuth");
 contact_route.post("/submit", contactController.createContact);
 
 contact_route.post("/admin/login", contactController.adminLogin);
-contact_route.get("/admin/messages", adminAuth, contactController.adminMessages);
+contact_route.get("/admin/messages", adminAuth, contactController.getMessages);
 
 
 
