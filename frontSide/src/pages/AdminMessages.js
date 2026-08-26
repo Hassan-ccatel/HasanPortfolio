@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminNavbar from "../components/AdminNavbar";
 import ContactServices from "../services/ContactServices";
-import "../styles/AdminMessages.css";
+import "./AdminMessage.css";
 
 const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
