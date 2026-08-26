@@ -17,6 +17,7 @@ const AdminLogin = () => {
     if (response.data.success) {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("adminLoggedIn", "true");
+      console.log("Admin logged in successfully");
 
       navigate("/admin/dashboard");
     }
