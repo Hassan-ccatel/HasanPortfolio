@@ -1,6 +1,6 @@
 import React from "react";
 import AdminNavbar from "../components/AdminNavbar";
-import "./AdminDashboard.css";
+
 
 const AdminDashboard = () => {
   return (
