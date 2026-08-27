@@ -27,6 +27,16 @@ class Contact {
     };
     return axios.get(url, config);
   }
+
+  getDashboardState(token) {
+    const url = `${process.env.REACT_APP_API_URL}/api/getDashboardState`;
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    }
+    return axios.get(url, config);
+  }
 }
 
 export default new Contact();
