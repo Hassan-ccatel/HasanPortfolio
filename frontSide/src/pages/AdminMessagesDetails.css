@@ -5,7 +5,8 @@
 }
 
 .admin-message-detail-container {
-  max-width: 900px;
+  max-width: 1230px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
