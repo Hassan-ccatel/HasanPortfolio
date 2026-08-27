@@ -44,7 +44,7 @@ const AdminDashboard = () => {
 
             <div className="admin-card">
               <h3>Unread Messages</h3>
-              <span>{state.unreadMessages}</span>
+              <span>{state.unreadeMessages}</span>
             </div>
 
             <div className="admin-card">
