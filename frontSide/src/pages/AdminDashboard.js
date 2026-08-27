@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import Contact from "../services/ContactServices";
 import "./AdminDashboard.css";
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     totalMessages: 0,
     unreadeMessages: 0,
@@ -37,7 +39,7 @@ const AdminDashboard = () => {
           <p>Welcome to your admin panel.</p>
           <div className="admin-dashboard-cards">
 
-            <div className="admin-card">
+            <div className="admin-card" onClick={()=> navigate("/admin/messages")}>
               <h3>Total Messages</h3>
               <span>{state.totalMessages}</span>
             </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminNavbar from "../components/AdminNavbar";
 import ContactServices from "../services/ContactServices";
-import "./AdminMessage.css";
+import "./AdminMessages.css";
 
 const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
@@ -26,30 +26,53 @@ const AdminMessages = () => {
   }, []);
 
   return (
-    <>
-      <AdminNavbar />
+   <>
+  <AdminNavbar />
 
-      <div>
-        <h1>Contact Messages</h1>
+  <div className="admin-messages">
+    <div className="admin-messages-container">
 
-        {messages.length === 0 ? (
-          <p>No messages found.</p>
-        ) : (
-          messages.map((item) => (
-            <div key={item._id}>
+      <h1 className="admin-messages-title">
+        Contact Messages
+      </h1>
+
+      {messages.length === 0 ? (
+        <p className="no-messages">
+          No messages found.
+        </p>
+      ) : (
+        <div className="messages-list">
+
+          {messages.map((item) => (
+            <div className="message-card" key={item._id}>
+
               <h3>{item.name}</h3>
-              <p>{item.email}</p>
-              <p>{item.subject}</p>
-              <p>{item.message}</p>
 
-              <small>
+              <p className="message-email">
+                {item.email}
+              </p>
+
+              <p className="message-subject">
+                {item.subject}
+              </p>
+
+              <p className="message-text">
+                {item.message}
+              </p>
+
+              <small className="message-date">
                 {new Date(item.createdAt).toLocaleString()}
               </small>
+
             </div>
-          ))
-        )}
-      </div>
-    </>
+          ))}
+
+        </div>
+      )}
+
+    </div>
+  </div>
+</>
   );
 };
 
