@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 
 const createContact = async (req, res) => {
     try {
-        
+
         const { name, email, subject, message, turnstileToken } = req.body;
 
         const contact = new Contact({
@@ -15,7 +15,7 @@ const createContact = async (req, res) => {
         });
 
         const contactData = await contact.save();
-        
+
         res.status(200).send({ success: true, msg: "successfully", data: contactData });
     } catch (error) {
         res.status(400).send({ success: false, msg: error.message });
@@ -32,13 +32,15 @@ const adminLogin = async (req, res) => {
         console.log("Email:", email);
         console.log("Password:", password);
         if (!email || !password) {
-            return res.status(400).send({ success: false, msg: "Email and password are required"
+            return res.status(400).send({
+                success: false, msg: "Email and password are required"
             });
         }
 
         // Check admin email
         if (email !== process.env.ADMIN_EMAIL) {
-            return res.status(401).send({ success: false, msg: "Invalid email or password"
+            return res.status(401).send({
+                success: false, msg: "Invalid email or password"
             });
         }
 
@@ -71,7 +73,8 @@ const adminLogin = async (req, res) => {
         console.log("Admin logged in successfully");
     } catch (error) {
 
-        res.status(400).send({ success: false, msg: error.message
+        res.status(400).send({
+            success: false, msg: error.message
         });
 
     }
@@ -87,7 +90,7 @@ const getMessages = async (req, res) => {
 
         const messages = await Contact.find().sort({ createdAt: -1 });
 
-        res.status(200).send({ success: true, msg: "Messages retrieved successfully", data: messages});
+        res.status(200).send({ success: true, msg: "Messages retrieved successfully", data: messages });
 
     } catch (error) {
 
@@ -102,9 +105,9 @@ const getMessages = async (req, res) => {
 
 const getDashboardState = async (req, res) => {
     try {
-        const totalMessages =await Contact.countDocuments();
-        const unreadeMessages = await Contact.countDocuments({isRead: false});
-        const readeMessages = await Contact.countDocuments({isRead: true});
+        const totalMessages = await Contact.countDocuments();
+        const unreadeMessages = await Contact.countDocuments({ isRead: false });
+        const readeMessages = await Contact.countDocuments({ isRead: true });
 
         res.status(200).send({
             success: true,
@@ -120,6 +123,19 @@ const getDashboardState = async (req, res) => {
     }
 };
 
+const getMessagesById = async (req, res) => {
+    try {
+        const messageId = req.params.id;
+        const message = await Contact.findById(messageId);
+        if (!message) {
+            return res.status(404).send({ success: false, msg: "Message not Found" });
+        }
+        res.status(200).send({ success: true, msg: "Message retrieved successfully", data: message });
+    } catch (error) {
+        res.status(400).send({ success: false, msg: error.message });
+    }
+}
+
 // ===============================
 // EXPORT
 // ===============================
@@ -129,5 +145,6 @@ module.exports = {
     createContact,
     adminLogin,
     getMessages,
+    getMessagesById,
     getDashboardState
 }
