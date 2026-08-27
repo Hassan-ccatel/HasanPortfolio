@@ -6,7 +6,7 @@ import "./AdminDashboard.css";
 const AdminDashboard = () => {
   const [state, setState] = useState({
     totalMessages: 0,
-    unreadMessages: 0,
+    unreadeMessages: 0,
     readeMessages: 0,
   });
   const fetchDashboardState = async () => {
@@ -15,8 +15,8 @@ const AdminDashboard = () => {
       const response = await Contact.getDashboardState(token);
       if (response.data.success) {
         setState({
-          totalMessage: response.data.data.totalMessages,
-          unreadMessages: response.data.data.unreadMessages,
+          totalMessages: response.data.data.totalMessages,
+          unreadeMessages: response.data.data.unreadeMessages,
           readeMessages: response.data.data.readeMessages,
         });
       }
