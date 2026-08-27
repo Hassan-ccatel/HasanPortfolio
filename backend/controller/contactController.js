@@ -96,6 +96,29 @@ const getMessages = async (req, res) => {
     }
 };
 
+// ===============================
+// GET DASHBOARD STATE
+// ===============================
+
+const getDashboardState = async (req, res) => {
+    try {
+        const totalMessages =await Contact.countDocuments();
+        const unreadMessages = await Contact.countDocuments({isRead: false});
+        const readMessages = await Contact.countMessages({isRead: true});
+
+        res.status(200).send({
+            success: true,
+            msg: "Dashboard state retrieved successfully",
+            data: {
+                totalMessages,
+                unreadMessages,
+                readMessages
+            }
+        });
+    } catch (error) {
+        res.status(400).send({ success: false, msg: error.message });
+    }
+};
 
 // ===============================
 // EXPORT
@@ -105,5 +128,6 @@ const getMessages = async (req, res) => {
 module.exports = {
     createContact,
     adminLogin,
-    getMessages
+    getMessages,
+    getDashboardState
 }
