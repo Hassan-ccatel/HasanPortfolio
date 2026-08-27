@@ -103,16 +103,16 @@ const getMessages = async (req, res) => {
 const getDashboardState = async (req, res) => {
     try {
         const totalMessages =await Contact.countDocuments();
-        const unreadMessages = await Contact.countDocuments({isRead: false});
-        const readMessages = await Contact.countMessages({isRead: true});
+        const unreadeMessages = await Contact.countDocuments({isRead: false});
+        const readeMessages = await Contact.countMessages({isRead: true});
 
         res.status(200).send({
             success: true,
             msg: "Dashboard state retrieved successfully",
             data: {
                 totalMessages,
-                unreadMessages,
-                readMessages
+                unreadeMessages,
+                readeMessages
             }
         });
     } catch (error) {
