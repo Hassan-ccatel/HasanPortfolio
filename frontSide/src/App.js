@@ -14,6 +14,7 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminMessages from "./pages/AdminMessages";
 import AdminRoutes from "./components/AdminRoutes";
+import AdminMessagesDetails from "./pages/AdminMessagesDetails";
 
 
 function Portfolio() {
@@ -62,6 +63,14 @@ function App() {
         element={
           <AdminRoutes>
             <AdminMessages />
+          </AdminRoutes>
+        }
+      />
+      <Route
+        path="/admin/messages/:id"
+        element={
+          <AdminRoutes>
+            <AdminMessagesDetails />
           </AdminRoutes>
         }
       />
