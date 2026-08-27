@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AdminNavbar from "../components/AdminNavbar";
 import Contact from "../services/ContactServices";
 import "./AdminDashboard.css";
