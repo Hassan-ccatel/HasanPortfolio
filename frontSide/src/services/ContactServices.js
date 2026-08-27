@@ -37,6 +37,16 @@ class Contact {
     }
     return axios.get(url, config);
   }
+
+  getSingleMessage(id, token) {
+    const url = `${process.env.REACT_APP_API_URL}/api/admin/messages/${id}`;
+    const config ={
+      headers: {
+        authorization: `Bearer ${token}`,
+      }
+    }
+    return axios.get(url, config);
+  }
 }
 
 export default new Contact();

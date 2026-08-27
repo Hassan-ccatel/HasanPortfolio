@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import {useNavigate} from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import ContactServices from "../services/ContactServices";
 import "./AdminMessage.css";
 
 const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
-
+  const navigate = useNavigate();
   const fetchMessages = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -44,7 +44,7 @@ const AdminMessages = () => {
         <div className="messages-list">
 
           {messages.map((item) => (
-            <div className="message-card" key={item._id}>
+            <div className="message-card" key={item._id} onClick={() => navigate(`/admin/messages/${item._id}`)}>
 
               <h3>{item.name}</h3>
 
