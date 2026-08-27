@@ -23,10 +23,6 @@
   transition: 0.3s ease;
 }
 
-.admin-nav-link:hover {
-  color: #007bff;
-}
-
 .admin-logout-btn {
   margin-left: auto;
   padding: 9px 18px;
