@@ -17,7 +17,7 @@ const AdminMessagesDetails = () => {
             if (response.data.success) {
               setMessage(response.data.data);
             }
-            
+            console.log("Message details fetched successfully:", response.data.data);
         } catch (error) {
             console.error("Error fetching message details:", error);
         } finally {
