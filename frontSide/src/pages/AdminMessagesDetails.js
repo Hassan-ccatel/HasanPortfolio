@@ -26,18 +26,19 @@ const AdminMessagesDetails = () => {
           setLoading(false);
         }
     }
-
+    
+    useEffect(()=>{
+      fetchMessageDetails();
+    }, [id]);
+    
     if(loading) {
       return <div>Loading...</div>;
     }
-
+    
     if(!messages) {
       return <p>Message not found.</p>;
     }
-
-    useEffect(()=>{
-      fetchMessageDetails();
-    }, [id])
+    
   return (
     <>
       <AdminNavbar />
