@@ -14,7 +14,10 @@
   align-items: center;
   gap: 30px;
 }
-
+.admin-navbar-container a:hover{
+  color: #5f8ab8;
+  
+}
 .admin-nav-link {
   text-decoration: none;
   color: #333;
