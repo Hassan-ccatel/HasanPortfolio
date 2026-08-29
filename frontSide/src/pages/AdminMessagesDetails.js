@@ -1,23 +1,24 @@
 import React,{useState, useEffect} from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
-import ContactServices from "../services/ContactServices";
-import "./AdminMessagesDetails.css";
+import Contact from "../services/ContactServices";
+import "./MessagesDetails.css";
 
 const AdminMessagesDetails = () => {
     const {id} = useParams();
     const navigate = useNavigate();
-    const [message, setMessage] = useState(null);
+    const [messages, setMessages] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const fetchMessageDetails = async ()=> {
         try {
             const token = localStorage.getItem("token");
-            const response = await ContactServices.getSingleMessage(id, token);
+            const response = await Contact.getSingleMessages(id, token);
+            console.log("Message details fetched successfully:", response.data);
             if (response.data.success) {
-              setMessage(response.data.data);
+              setMessages(response.data.data);
             }
-            console.log("Message details fetched successfully:", response.data.data);
+            
         } catch (error) {
             console.error("Error fetching message details:", error);
         } finally {
@@ -29,7 +30,7 @@ const AdminMessagesDetails = () => {
       return <div>Loading...</div>;
     }
 
-    if(!message) {
+    if(!messages) {
       return <p>Message not found.</p>;
     }
 
@@ -52,20 +53,20 @@ const AdminMessagesDetails = () => {
 
           <div className="single-message-card">
 
-            <h1>{message.name}</h1>
+            <h1>{messages.name}</h1>
 
             <p className="detail-email">
-              {message.email}
+              {messages.email}
             </p>
 
-            <h3>{message.subject}</h3>
+            <h3>{messages.subject}</h3>
 
             <p className="detail-message">
-              {message.message}
+              {messages.message}
             </p>
 
             <small>
-              {new Date(message.createdAt).toLocaleString()}
+              {new Date(messages.createdAt).toLocaleString()}
             </small>
 
           </div>

@@ -38,7 +38,7 @@ class Contact {
     return axios.get(url, config);
   }
 
-  getSingleMessage(id, token) {
+  getSingleMessages(id, token) {
     const url = `${process.env.REACT_APP_API_URL}/api/admin/messages/${id}`;
     const config ={
       headers: {

@@ -12,7 +12,6 @@ const AdminMessages = () => {
       const token = localStorage.getItem("token");
       console.log("Token retrieved from localStorage:", token);
       const response = await ContactServices.getMessages(token);
-        console.log("Messages fetched successfully:", response.data);
       if (response.data.success) {
         setMessages(response.data.data);
       }
