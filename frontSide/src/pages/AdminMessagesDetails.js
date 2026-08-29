@@ -13,6 +13,7 @@ const AdminMessagesDetails = () => {
     const fetchMessageDetails = async ()=> {
         try {
             const token = localStorage.getItem("token");
+            console.log("Token retrieved from localStorage:", token);
             const response = await Contact.getSingleMessages(id, token);
             console.log("Message details fetched successfully:", response.data);
             if (response.data.success) {

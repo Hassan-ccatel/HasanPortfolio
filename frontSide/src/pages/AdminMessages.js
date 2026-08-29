@@ -10,7 +10,7 @@ const AdminMessages = () => {
   const fetchMessages = async () => {
     try {
       const token = localStorage.getItem("token");
-      console.log("Token retrieved from localStorage:", token);
+      
       const response = await ContactServices.getMessages(token);
       if (response.data.success) {
         setMessages(response.data.data);
