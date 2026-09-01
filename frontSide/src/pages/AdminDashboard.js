@@ -50,7 +50,7 @@ const AdminDashboard = () => {
             </div>
 
             <div className="admin-card">
-              <h3>Total Contacts</h3>
+              <h3>Read Messages</h3>
               <span>{state.readeMessages}</span>
             </div>
 
