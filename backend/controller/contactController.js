@@ -126,7 +126,7 @@ const getDashboardState = async (req, res) => {
 const getMessagesById = async (req, res) => {
     try {
         const messageId = req.params.id;
-        const message = await Contact.findById(messageId);
+        const message = await Contact.findByIdAndUpdate(messageId,{isRead: true}, { new: true });
         if (!message) {
             return res.status(404).send({ success: false, msg: "Message not Found" });
         }
