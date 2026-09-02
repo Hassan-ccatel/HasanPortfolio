@@ -8,7 +8,7 @@ const cors = require("cors");
 // }));
 
 app.use(cors({
-    origin: "https://hasan-portfolio-frontend.vercel.app",
+    origin: "https://hasan-siddiqui.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
