@@ -3,7 +3,7 @@ const Project = require('../models/projects');
 // Create a new project
 const createProject = async (req, res) => {
     try {
-        const { title, description, image, technologies, githubUrl, liveUrl, category } = req.body;
+        const { title, description, image, technologies, githubUrl, liveUrl, category, turnstileToken } = req.body;
         const project = new Project({
             title,
             description,
