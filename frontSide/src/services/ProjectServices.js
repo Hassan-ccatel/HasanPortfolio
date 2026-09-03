@@ -2,7 +2,7 @@ import axios from "axios";
 
 class Project {
     createProject (formData, token){
-        const url = `${process.env.REACT_APP_API_URL}/api/admin/add-project`;
+        const url = `${process.env.REACT_APP_API_URL}/api/create-project`;
         const config = {
             headers: {
                 "content-Type" : "multipart/form-data",
