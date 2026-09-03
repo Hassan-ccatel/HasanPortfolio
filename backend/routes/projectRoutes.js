@@ -9,15 +9,7 @@ project_route.use(bodyParser.urlencoded({extended: true}));
 
 project_route.use(express.static("public"));
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, path.join(__dirname, "../public/images"));
-    },
-    filename: function (req, file, cb) {
-        const name = new Date() + "-" + file.originalname;
-        cb(null, name);
-    }
-});
+const storage = multer.memoryStorage();
 
 const upload = multer({ storage: storage });
 
