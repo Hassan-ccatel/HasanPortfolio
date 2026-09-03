@@ -31,10 +31,12 @@ const AddProject = () => {
             data.append('liveUrl', formData.liveUrl);
             data.append('category', formData.category);
             if(image) {
-                data.append("image", image);
+                data.append("images", image);
             }
 
-            const response = await ProjectServices.createProject(data);
+            const token = localStorage.getItem("token");
+
+            const response = await ProjectServices.createProject(data, token);
             console.log("Project created successfully:", response.data);
             alert("Project created successfully!");
             setFormData({
