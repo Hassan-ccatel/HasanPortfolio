@@ -21,6 +21,17 @@ const AdminNavbar = () => {
         <Link className="admin-nav-link" to="/admin/messages">
           Messages
         </Link>
+        <div className="admin-nav-dropdown">
+          <span className="admin-nav-link">Project</span>
+          <div className="admin-submanu">
+            <Link className="admin-submenu-link" to="/admin/projects">
+              All Projects
+            </Link>
+            <Link className="admin-submenu-link" to="/admin/add-project">
+              Add Project
+            </Link>
+          </div>
+        </div>
 
         <button className="admin-logout-btn" onClick={logout}>
           Logout
