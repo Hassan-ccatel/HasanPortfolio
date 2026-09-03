@@ -34,7 +34,7 @@ const AddProject = () => {
                 data.append("image", image);
             }
 
-            const response = await ProjectServices.create(data);
+            const response = await ProjectServices.createProject(data);
             console.log("Project created successfully:", response.data);
             alert("Project created successfully!");
             setFormData({

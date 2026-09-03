@@ -23,7 +23,7 @@ const AdminNavbar = () => {
         </Link>
         <div className="admin-nav-dropdown">
           <span className="admin-nav-link">Project</span>
-          <div className="admin-submanu">
+          <div className="admin-submenu">
             <Link className="admin-submenu-link" to="/admin/projects">
               All Projects
             </Link>
