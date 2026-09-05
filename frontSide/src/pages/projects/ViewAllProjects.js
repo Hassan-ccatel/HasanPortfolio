@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { FaExternalLinkAlt, FaPaperPlane } from 'react-icons/fa';
 import ProjectsServices from '../../services/ProjectServices';
 
 const ViewAllProjects = () => {
