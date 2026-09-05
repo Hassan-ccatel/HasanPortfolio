@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AdminNavbar from '../../components/AdminNavbar';
 import ProjectServices from '../../services/ProjectServices';
+import './AddProject.css';
 
 const AddProject = () => {
     const [formData, setFormData] = useState({

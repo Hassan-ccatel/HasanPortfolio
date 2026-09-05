@@ -1,0 +1,184 @@
+
+
+.create-project-page {
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.create-project-page h1 {
+    margin: 0 0 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+}
+
+/* Form */
+
+.create-project-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.create-project-page form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Labels */
+
+.create-project-page label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Inputs */
+
+.create-project-page input,
+.create-project-page textarea,
+.create-project-page select {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    background: #f9fafb;
+    color: #1f2937;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+/* Textarea */
+
+.create-project-page textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+/* Focus */
+
+.create-project-page input:focus,
+.create-project-page textarea:focus,
+.create-project-page select:focus {
+    border-color: #6366f1;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+/* Placeholder */
+
+.create-project-page input::placeholder,
+.create-project-page textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* File Input */
+
+.create-project-page input[type="file"] {
+    padding: 10px;
+    background: #f9fafb;
+    cursor: pointer;
+}
+
+.create-project-page input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 9px 14px;
+    border: none;
+    border-radius: 7px;
+    background: #6366f1;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.create-project-page input[type="file"]::file-selector-button:hover {
+    background: #4f46e5;
+}
+
+/* Select */
+
+.create-project-page select {
+    cursor: pointer;
+}
+
+/* Button */
+
+.create-project-page button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #6366f1;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.create-project-page button:hover {
+    background: #4f46e5;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.25);
+}
+
+.create-project-page button:active {
+    transform: translateY(0);
+}
+
+/* ==============================
+   Responsive
+================================= */
+
+@media (max-width: 768px) {
+    .create-project-page {
+        margin: 25px 15px;
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    .create-project-page h1 {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .create-project-page {
+        margin: 15px 10px;
+        padding: 20px 15px;
+    }
+
+    .create-project-page h1 {
+        font-size: 22px;
+    }
+
+    .create-project-page form {
+        gap: 18px;
+    }
+
+    .create-project-page input,
+    .create-project-page textarea,
+    .create-project-page select {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .create-project-page button {
+        font-size: 15px;
+    }
+}
