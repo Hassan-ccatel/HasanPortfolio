@@ -7,7 +7,7 @@ const ViewAllProjects = () => {
 
     const fetchProjects = async () => {
         try {
-            const token = localstorage.getItem("token");
+            const token = localStorage.getItem("token");
             const response = await ProjectsServices.getProjects(token);
             setProjects(response.data);
         }
