@@ -9,7 +9,7 @@ const ViewAllProjects = () => {
         try {
             const token = localStorage.getItem("token");
             const response = await ProjectsServices.getProjects(token);
-            setProjects(response.data);
+            setProjects(response.data.data);
         }
         catch (error) {
             console.error("Error fetching projects:", error);
