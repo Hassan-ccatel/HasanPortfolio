@@ -11,6 +11,16 @@ class Project {
         }
         return axios.post(url, formData, config);
     }
+
+    getProjects(token) {
+        const url = `${process.env.REACT_APP_API_URL}/api/projects`;
+        const config = {
+            headers: {
+                Authorization: `Bearer ${token}`, 
+            }
+        }
+        return axios.get(url, config);
+    }
 }
 
 export default new Project();

@@ -16,6 +16,7 @@ import AdminMessages from "./pages/AdminMessages";
 import AdminRoutes from "./components/AdminRoutes";
 import AdminMessagesDetails from "./pages/AdminMessagesDetails";
 import AddProject from "./pages/projects/AddProject";
+import ViewAllProjects from "./pages/projects/ViewAllProjects";
 
 
 function Portfolio() {
@@ -80,6 +81,14 @@ function App() {
         element={
           <AdminRoutes>
             <AddProject />
+          </AdminRoutes>
+        }
+      />
+      <Route
+        path="/admin/projects"
+        element={
+          <AdminRoutes>
+            <ViewAllProjects />
           </AdminRoutes>
         }
       />
