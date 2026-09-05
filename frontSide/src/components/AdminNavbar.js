@@ -22,7 +22,7 @@ const AdminNavbar = () => {
           Messages
         </Link>
         <div className="admin-nav-dropdown">
-          <span className="admin-nav-link">Project</span>
+          <div className="admin-nav-link">Project</div>
           <div className="admin-submenu">
             <Link className="admin-submenu-link" to="/admin/projects">
               All Projects
