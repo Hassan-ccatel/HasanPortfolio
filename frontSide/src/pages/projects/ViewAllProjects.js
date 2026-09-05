@@ -41,7 +41,7 @@ const ViewAllProjects = () => {
 
                     <div className="projects-grid">
                         {projects.map((project) => (
-                            <article className="project-card" key={project.title}>
+                            <article className="project-card" key={project._id}>
                                 <div className="project-image">
                                     <img src={project.image} alt={project.title} />
                                     <div className="project-overlay">
