@@ -44,7 +44,16 @@ const createProject = async (req, res) => {
     }
 }
 
+const getAllProjects = async (req, res) => {
+    try {
+        const projects = await Project.find();
+        res.status(200).send({ success: true, msg: "Projects fetched successfully", data: projects });
+    } catch (error) {
+        res.status(400).send({ success: false, msg: error.message });
+    }
+}
 
 module.exports = {
-    createProject
+    createProject,
+    getAllProjects
 }

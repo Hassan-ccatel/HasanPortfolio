@@ -18,6 +18,7 @@ const projectController = require("../controller/projectController");
 const adminAuth = require("../middlewer/adminAuth");
 
 project_route.post("/add-project", adminAuth, upload.single("images"), projectController.createProject);
+project_route.get("/get-projects", projectController.getAllProjects);
 
 
 module.exports = project_route;
