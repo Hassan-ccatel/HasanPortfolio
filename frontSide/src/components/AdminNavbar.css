@@ -57,7 +57,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
-
+.admin-nav-dropdown:hover .admin-submenu {
+  display: block;
+}
 .admin-submenu a {
   padding: 12px 15px;
   color: #333;
