@@ -26,8 +26,6 @@ const ViewAllProjects = () => {
         return <div>Loading...</div>;
     }
 
-
-
     return (
         <>
             <section id="projects" className="projects section">

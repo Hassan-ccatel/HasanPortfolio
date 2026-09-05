@@ -13,7 +13,7 @@ class Project {
     }
 
     getProjects(token) {
-        const url = `${process.env.REACT_APP_API_URL}/api/projects`;
+        const url = `${process.env.REACT_APP_API_URL}/api/get-projects`;
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`, 
