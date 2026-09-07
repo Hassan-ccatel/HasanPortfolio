@@ -77,7 +77,9 @@ export default function Contact() {
             <div className="contact-social">
               <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
               {/* <a href="https://github.com" target="_blank" rel="noreferrer"><FaGithub /></a> */}
-              <a href="#"><FaFacebookF /></a>
+              <a href="https://www.facebook.com/profile.php?id=61593860415227"
+               target="_blank"
+                rel="noreferrer"><FaFacebookF /></a>
               <a href="#"><FaInstagram /></a>
             </div>
           </div>
