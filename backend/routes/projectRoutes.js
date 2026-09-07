@@ -19,6 +19,7 @@ const adminAuth = require("../middlewer/adminAuth");
 
 project_route.post("/add-project", adminAuth, upload.single("images"), projectController.createProject);
 project_route.get("/get-projects", projectController.getAllProjects);
+project_route.get("/delete-project/:id", adminAuth, projectController.deleteProject);
 
 
 module.exports = project_route;
