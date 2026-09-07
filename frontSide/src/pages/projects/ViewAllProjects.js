@@ -1,10 +1,13 @@
-import React, {useState, useEffect} from 'react';
-import { FaExternalLinkAlt, FaPaperPlane } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaExternalLinkAlt, FaPaperPlane, FaTrash } from 'react-icons/fa';
 import ProjectsServices from '../../services/ProjectServices';
+import './ViewAllProjects.css';
 
 const ViewAllProjects = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const isAdmin = localStorage.getItem("isAdmin") === "true";
 
     const fetchProjects = async () => {
         try {
@@ -27,6 +30,23 @@ const ViewAllProjects = () => {
         return <div>Loading...</div>;
     }
 
+
+    const handleDeleteProject = async (id) => {
+        if (!window.confirm("Are you sure you want to delete this project?")) {
+            return;
+        }
+
+        try {
+            const token = localStorage.getItem("token");
+            await ProjectsServices.deleteProject(id, token);
+            setProjects(projects.filter(project => project._id !== id));
+            alert("Project deleted successfully");
+        } catch (error) {
+            console.error("Error deleting project:", error);
+            alert("Failed to delete project. Please try again.");
+        }
+    }
+
     return (
         <>
             <section id="projects" className="projects section">
@@ -41,13 +61,20 @@ const ViewAllProjects = () => {
                     <div className="projects-grid">
                         {projects.map((project) => (
                             <article className="project-card" key={project._id}>
+                                {isAdmin && (
+                                    <button className="delete-project-btn"
+                                        onClick={() => { handleDeleteProject(project._id) }}
+                                        aria-label={`Delete ${project.title}`}>
+                                        <FaTrash />
+                                    </button>
+                                )}
                                 <div className="project-image">
                                     <img src={project.image} alt={project.title} />
                                     <div className="project-overlay">
                                         <a href={project.liveUrl}
-                                        target='blank' 
-                                        rel="noopener noreferrer"
-                                        aria-label={`Open ${project.title}`}>
+                                            target='blank'
+                                            rel="noopener noreferrer"
+                                            aria-label={`Open ${project.title}`}>
                                             <FaExternalLinkAlt />
                                         </a>
                                     </div>
