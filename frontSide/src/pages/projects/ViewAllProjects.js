@@ -7,7 +7,7 @@ const ViewAllProjects = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const isAdmin = localStorage.getItem("isAdmin") === "true";
+    const isAdmin = localStorage.getItem("adminLoggedIn") === "true";
 
     const fetchProjects = async () => {
         try {
