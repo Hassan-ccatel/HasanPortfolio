@@ -405,7 +405,6 @@ nav a.active {
 
 .skill-icon {
   font-size: 50px;
-  padding-bottom: 15px;
   max-width: 112px;
   max-height: 112px;
   margin: auto;
@@ -416,6 +415,7 @@ nav a.active {
 }
 
 .skill-card h3 {
+  padding-bottom: 15px;
   font-size: 15px
 }
 
