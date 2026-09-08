@@ -407,6 +407,11 @@ nav a.active {
   font-size: 50px;
   margin-bottom: 15px;
 }
+.skill-icon img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
 
 .skill-card h3 {
   font-size: 15px
