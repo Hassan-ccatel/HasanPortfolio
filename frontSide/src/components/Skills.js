@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import SkillServices from "../services/SkillServices";
-import {
-  SiWordpress,
-  SiReact,
-  SiHtml5,
-  SiCss,
-  SiJavascript,
-  SiBootstrap,
-  SiTailwindcss,
-  SiExpress,
-  SiMongodb,
-  SiNodedotjs,
-} from "react-icons/si";
+// import {
+//   SiWordpress,
+//   SiReact,
+//   SiHtml5,
+//   SiCss,
+//   SiJavascript,
+//   SiBootstrap,
+//   SiTailwindcss,
+//   SiExpress,
+//   SiMongodb,
+//   SiNodedotjs,
+// } from "react-icons/si";
 
 // const skills = [
 //   {
