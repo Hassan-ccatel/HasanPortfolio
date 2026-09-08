@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AdminNavbar from '../components/AdminNavbar';
 import SkillServices from "../services/SkillServices";
+import  "./AddSkills.css";
 
 const AddSkills = () => {
 
