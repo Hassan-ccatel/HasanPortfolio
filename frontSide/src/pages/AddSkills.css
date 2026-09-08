@@ -1,7 +1,13 @@
 /* Add Skill Page */
+
+.admin-skill-container{
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: auto;
+    background-color: #f5f7fb;
+}
 .create-skill-page {
-    width: 100%;
-    max-width: 700px;
+    max-width: 525px;
     margin: 50px auto;
     padding: 35px;
     background: #ffffff;
