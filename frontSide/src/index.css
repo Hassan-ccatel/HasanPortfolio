@@ -405,11 +405,13 @@ nav a.active {
 
 .skill-icon {
   font-size: 50px;
-  margin-bottom: 15px;
+  padding-bottom: 15px;
+  max-width: 112px;
+  max-height: 112px;
+  margin: auto;
 }
 .skill-icon img{
-  width: 100px;
-  height: 100px;
+  width: 100%;
   border-radius: 50%;
 }
 
