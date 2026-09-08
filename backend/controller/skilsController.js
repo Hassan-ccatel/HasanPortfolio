@@ -38,8 +38,8 @@ const createSkill = async (req, res) => {
 
 const getSkills = async(req, res)=>{
     try {
-         await Skill.find();
-        res.status(200).send({ success: true, msg: "Fetch data successfully!"});
+        const skills = await Skill.find();
+        res.status(200).send({ success: true, msg: "Fetch data successfully!", data: skills});
     } catch(error){
         res.status(400).send({ success: false, msg: error.message});
     }
