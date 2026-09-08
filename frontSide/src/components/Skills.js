@@ -93,9 +93,9 @@ export default function Skills() {
     try {
       const token = localStorage.getItem("token");
       const response = await SkillServices.getSkill(token);
-      setSkills(response.data);
-      console.log(response);
-      alert("Fetch skill successfully!");
+      setSkills(response.data.data);
+      console.log("Skills fetch: ",response);
+      
     } catch(error){
       console.error(error.message);
     }
