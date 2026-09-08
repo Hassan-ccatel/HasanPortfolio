@@ -122,17 +122,15 @@ export default function Skills() {
         <div className="skills-grid">
 
           {skills.map((skill) => {
-            const Icon = skill.image;
-
             return (
-              <div className="skill-card" key={skill.title}>
+
+              <div className="skill-card" key={skill._id || skill.title}>
 
                 <div
                   className="skill-icon"
-                  style={{ color: skill.color }}
                 >
-                  {/* <Icon /> */}
-                  {skill.image}
+                  {/* <image /> */}
+                  <img src={skill.image} alt={skill.title}></img>
                 </div>
 
                 <h3>{skill.title}</h3>
