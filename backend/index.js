@@ -19,9 +19,12 @@ mongoose.connect(process.env.MONGO_URL);
 
 const contact_route = require("./routes/contactRoutes");
 const project_route = require("./routes/projectRoutes");
+const skill_route = require("./routes/skilsRoutes");
 
 app.use("/api", contact_route);
 app.use("/api", project_route);
+app.use("/api", skill_route);
+
 app.get("/", (req,res)=>{
     res.send("Hello world");
 })
