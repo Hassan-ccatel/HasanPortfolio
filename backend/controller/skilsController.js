@@ -36,11 +36,21 @@ const createSkill = async (req, res) => {
     }
 }
 
+const getSkills = async(req, res)=>{
+    try {
+         await Skill.find();
+        res.status(200).send({ success: true, msg: "Fetch data successfully!"});
+    } catch(error){
+        res.status(400).send({ success: false, msg: error.message});
+    }
+
+}
 
 
 
 
 
 module.exports = {
-    createSkill
+    createSkill,
+    getSkills
 }
