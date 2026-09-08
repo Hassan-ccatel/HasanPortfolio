@@ -11,6 +11,16 @@ class Skill {
         }
         return axios.post(url, formData, config);
     }
+
+    getSkill (token) {
+        const url = `${process.env.REACT_APP_API_URL}/api/get-skill`;
+        const config = {
+            headers:{
+                Authorization : `Bearer ${token}`,
+            }
+        }
+        return axios.get(url, config);
+    }
 }
 
 
