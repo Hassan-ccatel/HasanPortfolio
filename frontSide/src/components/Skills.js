@@ -87,7 +87,7 @@ import SkillServices from "../services/SkillServices";
 // ];
 
 export default function Skills() {
-  const [skills, setSkills] = useState();
+  const [skills, setSkills] = useState([]);
 
   const fetchSkill = async()=>{
     try {
