@@ -38,7 +38,7 @@ const AddProject = () => {
             const token = localStorage.getItem("token");
 
             const response = await ProjectServices.createProject(data, token);
-            console.log("Project created successfully:", response.data);
+            
             alert("Project created successfully!");
             setFormData({
                 title: '',
