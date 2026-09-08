@@ -32,7 +32,7 @@ const AddSkills = () => {
             data.append("description", formData.description);
             data.append("percentage", formData.percentage);
             if (image){
-                data.append("image", formData.image);
+                data.append("image", image);
             }
             const token = localStorage.getItem("token");
             const response = await SkillServices.createSkill(data, token);
@@ -58,8 +58,8 @@ const AddSkills = () => {
                     <div className="form-group">
                         <label>Skill Name</label>
                         <input type="text"
-                            name="name"
-                            value={formData.name}
+                            name="title"
+                            value={formData.title}
                             onChange={handleChange}
                             placeholder="e.g. React.js" required
                         />
