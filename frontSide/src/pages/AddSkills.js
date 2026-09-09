@@ -53,51 +53,54 @@ const AddSkills = () => {
         <>
             <AdminNavbar />
             <div className='admin-skill-container'>
-                <div className="create-skill-page">
-                    <h1>Add Skill</h1>
-                    <form onSubmit={handleSubmit}>
-                        {/* Skill Name */}
-                        <div className="form-group">
-                            <label>Skill Name</label>
-                            <input type="text"
-                                name="title"
-                                value={formData.title}
-                                onChange={handleChange}
-                                placeholder="e.g. React.js" required
-                            />
-                        </div>
-                        {/* Description */}
-                        <div className="form-group">
-                            <label>Description</label>
-                            <textarea name="description"
-                                value={formData.description}
-                                onChange={handleChange}
-                                placeholder="Write skill description..."
-                                rows="5" required ></textarea>
-                        </div>
-                        {/* Percentage */}
-                        <div className="form-group">
-                            <label>Skill Percentage</label>
-                            <div className="percentage-input">
-                                <input type="number" name="percentage"
-                                    value={formData.percentage}
+                <div className='skill-section'>
+                    <div className="create-skill-page">
+                        <h1>Add Skill</h1>
+                        <form onSubmit={handleSubmit}>
+                            {/* Skill Name */}
+                            <div className="form-group">
+                                <label>Skill Name</label>
+                                <input type="text"
+                                    name="title"
+                                    value={formData.title}
                                     onChange={handleChange}
-                                    placeholder="e.g. 90"
-                                    min="0"
-                                    max="100" required
-                                /> <span>%</span>
+                                    placeholder="e.g. React.js" required
+                                />
                             </div>
-                        </div>
-                        {/* Logo */}
-                        <div className="form-group">
-                            <label>Skill Logo</label>
-                            <input type="file"
-                                accept="image/*"
-                                onChange={handleFileChange}
-                                required />
-                        </div>
-                        <button type="submit"> Add Skill </button>
-                    </form>
+                            {/* Description */}
+                            <div className="form-group">
+                                <label>Description</label>
+                                <textarea name="description"
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                    placeholder="Write skill description..."
+                                    rows="5" required ></textarea>
+                            </div>
+                            {/* Percentage */}
+                            <div className="form-group">
+                                <label>Skill Percentage</label>
+                                <div className="percentage-input">
+                                    <input type="number" name="percentage"
+                                        value={formData.percentage}
+                                        onChange={handleChange}
+                                        placeholder="e.g. 90"
+                                        min="0"
+                                        max="100" required
+                                    /> <span>%</span>
+                                </div>
+                            </div>
+                            {/* Logo */}
+                            <div className="form-group">
+                                <label>Skill Logo</label>
+                                <input type="file"
+                                    accept="image/*"
+                                    onChange={handleFileChange}
+                                    required />
+                            </div>
+                            <button type="submit"> Add Skill </button>
+                        </form>
+                    </div>
+
                 </div>
 
             </div>
