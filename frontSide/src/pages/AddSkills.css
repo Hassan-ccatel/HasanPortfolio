@@ -2,6 +2,8 @@
 
 .admin-skill-container{
     background: #f5f7fb;
+    min-height: 100vh;
+    padding-top: 60px;
 }
 .skill-section{
     max-width: 1230px;
