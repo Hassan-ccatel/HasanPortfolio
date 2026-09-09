@@ -405,9 +405,10 @@ nav a.active {
 
 .skill-icon {
   font-size: 50px;
-  max-width: 112px;
-  max-height: 112px;
+  max-width: 100px;
+  height: 100px;
   margin: auto;
+  margin-bottom: 13px;
 }
 .skill-icon img{
   width: 100%;
@@ -415,7 +416,7 @@ nav a.active {
 }
 
 .skill-card h3 {
-  padding-bottom: 15px;
+  padding-bottom: 13px;
   font-size: 15px
 }
 
@@ -423,8 +424,8 @@ nav a.active {
   color: #8c99ac;
   font-size: 11px;
   line-height: 1.6;
-  min-height: 53px;
-  margin: 12px 0 18px;
+  min-height: 40px;
+  margin: 10px 0 10px;
 }
 
 .skill-progress {
