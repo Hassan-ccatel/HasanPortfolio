@@ -5,12 +5,12 @@
 }
 .skill-section{
     max-width: 1230px;
-    padding: 80 15px;
+    padding: 80px 15px;
     margin: auto;
 }
 .create-skill-page {
     max-width: 525px;
-    margin: 0px auto;
+    margin: auto;
     padding: 35px;
     background: #ffffff;
     border-radius: 12px;
