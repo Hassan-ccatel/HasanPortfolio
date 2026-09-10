@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import ContactServices from "../services/ContactServices";
 import "./AdminMessage.css";
@@ -7,6 +7,11 @@ import "./AdminMessage.css";
 const AdminMessages = () => {
   const [messages, setMessages] = useState([]);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+
+ const status = searchParams.get("status");
+
+
   const fetchMessages = async () => {
     try {
       const token = localStorage.getItem("token");
@@ -24,6 +29,16 @@ const AdminMessages = () => {
     fetchMessages();
   }, []);
 
+
+  const filterMessage = messages.filter((item)=>{
+    if(status === "unread"){
+      return item.isRead === false;
+    }
+    if(status === "read"){
+      return item.isRead === true;
+    }
+    return true;
+  });
   return (
    <>
   <AdminNavbar />
@@ -32,17 +47,18 @@ const AdminMessages = () => {
     <div className="admin-messages-container">
 
       <h1 className="admin-messages-title">
-        Contact Messages
+        {status === "unread" ? "Unread Message" : status === "read" ? "Read Message" : "Contact Message"}
+        {/* Contact Messages */}
       </h1>
 
-      {messages.length === 0 ? (
+      {filterMessage.length === 0 ? (
         <p className="no-messages">
           No messages found.
         </p>
       ) : (
         <div className="messages-list">
 
-          {messages.map((item) => (
+          {filterMessage.map((item) => (
             <div className="message-card" key={item._id} onClick={() => navigate(`/admin/messages/${item._id}`)}>
 
               <h3>{item.name}</h3>

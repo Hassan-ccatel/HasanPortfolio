@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import Contact from "../services/ContactServices";
 import "./AdminDashboard.css";
@@ -44,15 +44,15 @@ const AdminDashboard = () => {
               <span>{state.totalMessages}</span>
             </div>
 
-            <div className="admin-card">
+            <Link to="/admin/messages?status=unread" className="admin-card">
               <h3>Unread Messages</h3>
               <span>{state.unreadeMessages}</span>
-            </div>
+            </Link>
 
-            <div className="admin-card">
+            <Link to="/admin/messages?status=read" className="admin-card">
               <h3>Read Messages</h3>
               <span>{state.readeMessages}</span>
-            </div>
+            </Link>
 
           </div>
         </div>
