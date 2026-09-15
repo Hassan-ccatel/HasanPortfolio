@@ -16,6 +16,7 @@ contact_route.post("/admin/login", contactController.adminLogin);
 contact_route.get("/getDashboardState", adminAuth, contactController.getDashboardState);
 contact_route.get("/admin/messages", adminAuth, contactController.getMessages);
 contact_route.get("/admin/messages/:id", adminAuth, contactController.getMessagesById);
+contact_route.delete("/admin/message/delete/:id", adminAuth, contactController.deleteMessage);
 
 
 

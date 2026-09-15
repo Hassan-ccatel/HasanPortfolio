@@ -123,6 +123,10 @@ const getDashboardState = async (req, res) => {
     }
 };
 
+// ===============================
+// Get Message By Id
+// ===============================
+
 const getMessagesById = async (req, res) => {
     try {
         const messageId = req.params.id;
@@ -137,6 +141,23 @@ const getMessagesById = async (req, res) => {
 }
 
 // ===============================
+// Delete Message
+// ===============================
+
+const deleteMessage = async (req, res) => {
+    try {
+        const deleteId = req.params.id;
+        const delMessage = await Contact.findByIdAndDelete(deleteId);
+        if(!delMessage){
+            return res.status(404).send({success: false, msg: "Message not found.",})
+        }
+        res.status(200).send({success: true, msg: "Message Delete Successfully!", data: delMessage});
+    } catch (error){
+        res.status(400).send({ success: false, msg: error.message });
+    }
+}
+
+// ===============================
 // EXPORT
 // ===============================
 
@@ -146,5 +167,6 @@ module.exports = {
     adminLogin,
     getMessages,
     getMessagesById,
-    getDashboardState
+    getDashboardState,
+    deleteMessage
 }
