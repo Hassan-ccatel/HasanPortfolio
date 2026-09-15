@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import ContactServices from "../services/ContactServices";
+import { FaTrash } from "react-icons/fa";
 import "./AdminMessage.css";
 
 const AdminMessages = () => {
@@ -39,6 +40,24 @@ const AdminMessages = () => {
     }
     return true;
   });
+
+  const handleDeleteMessage = async(id) => {
+    if(!window.confirm("Are you sure you want to delete message")){
+       return;
+    }
+
+    try{
+      const token = localStorage.getItem("token");
+      await ContactServices.deleteMessage(id, token);
+      setMessages((prevMessage) => (
+        prevMessage.filter((mesage) => mesage._id !== id)
+      ))
+      alert("Message delete successfully!");
+    } catch(error){
+      console.error("Error Delete Message", error);
+    }
+  }
+
   return (
    <>
   <AdminNavbar />
@@ -48,7 +67,7 @@ const AdminMessages = () => {
 
       <h1 className="admin-messages-title">
         {status === "unread" ? "Unread Message" : status === "read" ? "Read Message" : "Contact Message"}
-        {/* Contact Messages */}
+        
       </h1>
 
       {filterMessage.length === 0 ? (
@@ -60,6 +79,13 @@ const AdminMessages = () => {
 
           {filterMessage.map((item) => (
             <div className="message-card" key={item._id} onClick={() => navigate(`/admin/messages/${item._id}`)}>
+
+              <button className="delete-mesage-btn"
+               onClick={(e) => {
+                e.stopPropagation();
+                handleDeleteMessage(item._id)}}>
+                <FaTrash />
+               </button>
 
               <h3>{item.name}</h3>
 

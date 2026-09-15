@@ -47,6 +47,16 @@ class Contact {
     }
     return axios.get(url, config);
   }
+
+  deleteMessage(id, token) {
+    const url = `${process.env.REACT_APP_API_URL}/api/admin/message/delete/${id}`;
+    const config ={
+      headers : {
+        Authorization : `Bearer ${token}`,
+      }
+    }
+    return axios.delete(url, config);
+  }
 }
 
 export default new Contact();
