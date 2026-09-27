@@ -50,7 +50,7 @@ const AdminMessagesDetails = () => {
             className="back-btn"
             onClick={() => navigate("/admin/messages")}
           >
-            ← Back to Messages
+            ←
           </button>
 
           <div className="single-message-card">
