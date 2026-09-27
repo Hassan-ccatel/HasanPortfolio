@@ -99,20 +99,28 @@
   .admin-navbar-container {
     padding: 12px 15px;
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 0;
   }
 
   /* Hamburger */
   .admin-menu-toggle {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    align-self: flex-end;
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
   }
 
-  /* Hide Menu */
+  /* Hide menu */
   .admin-nav-menu {
     display: none;
     flex-direction: column;
@@ -122,9 +130,9 @@
     padding-top: 10px;
   }
 
-  /* Open Menu */
+  /* Show menu */
   .admin-nav-menu.active {
-    display: flex;
+    display: flex !important;
   }
 
   .admin-nav-link {
