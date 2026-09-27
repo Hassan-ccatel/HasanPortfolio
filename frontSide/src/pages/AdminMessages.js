@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import ContactServices from "../services/ContactServices";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaArrowLeft } from "react-icons/fa";
 import "./AdminMessage.css";
 
 const AdminMessages = () => {
@@ -64,7 +64,10 @@ const AdminMessages = () => {
 
   <div className="admin-messages">
     <div className="admin-messages-container">
-
+       <button className="bck-dashboard-btn"
+        onClick={()=> navigate("/admin/dashboard")}>
+        <FaArrowLeft />
+       </button>
       <h1 className="admin-messages-title">
         {status === "unread" ? "Unread Message" : status === "read" ? "Read Message" : "Contact Message"}
         
