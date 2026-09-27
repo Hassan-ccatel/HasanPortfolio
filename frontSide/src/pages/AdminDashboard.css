@@ -2,6 +2,10 @@
   min-height: 100vh;
   background: #f5f7fb;
   padding: 40px;
+
+  position: relative;
+  top: 56px;
+  z-index: 1;
 }
 
 .admin-dashboard-content {
