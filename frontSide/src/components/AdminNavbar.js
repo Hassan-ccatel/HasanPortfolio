@@ -9,75 +9,47 @@ const AdminNavbar = () => {
 
   const logout = () => {
     localStorage.removeItem("adminLoggedIn");
-    setMenuOpen(false);
     navigate("/admin/login");
+    setMenuOpen(false);
   };
 
   return (
     <nav className="admin-navbar">
       <div className="admin-navbar-container">
-
-        {/* Hamburger */}
-        <button
-          type="button"
-          className="admin-menu-toggle"
-          onClick={() => setMenuOpen((prev) => !prev)}
-        >
+        <button className="admin-menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
-
-        {/* Menu */}
         <div className={`admin-nav-menu ${menuOpen ? "active" : ""}`}>
 
-          <Link
-            className="admin-nav-link"
-            to="/admin/dashboard"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link className="admin-nav-link" to="/admin/dashboard">
             Dashboard
           </Link>
 
-          <Link
-            className="admin-nav-link"
-            to="/admin/messages"
-            onClick={() => setMenuOpen(false)}
-          >
+          <Link className="admin-nav-link" to="/admin/messages">
             Messages
           </Link>
-
           <div className="admin-nav-dropdown">
-            <div className="admin-nav-link">
-              Project
-            </div>
-
+            <div className="admin-nav-link">Project</div>
             <div className="admin-submenu">
-              <Link to="/admin/projects">
+              <Link className="admin-submenu-link" to="/admin/projects">
                 All Projects
               </Link>
-
-              <Link to="/admin/add-project">
+              <Link className="admin-submenu-link" to="/admin/add-project">
                 Add Project
               </Link>
             </div>
           </div>
-
           <div className="admin-nav-dropdown">
-            <div className="admin-nav-link">
-              Skills
-            </div>
-
+            <div className="admin-nav-link">Skills</div>
             <div className="admin-submenu">
-              <Link to="/admin/add-skills">
+              <Link className="admin-submenu-link" to="/admin/add-skills">
                 Add Skills
               </Link>
             </div>
           </div>
 
-          <button
-            type="button"
-            className="admin-logout-btn"
-            onClick={logout}
-          >
+          <button className="admin-logout-btn" onClick={logout}>
             Logout
           </button>
 

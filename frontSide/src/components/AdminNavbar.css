@@ -12,49 +12,20 @@
 
   display: flex;
   align-items: center;
-}
-
-/* =========================
-   Hamburger
-========================= */
-
-.admin-menu-toggle {
-  display: none;
-  border: none;
-  background: transparent;
-  color: #333;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 5px;
-}
-
-/* =========================
-   Desktop Menu
-========================= */
-
-.admin-nav-menu {
-  width: 100%;
-  display: flex;
-  align-items: center;
   gap: 30px;
 }
-
+.admin-navbar-container a:hover{
+  color: #5f8ab8;
+  
+}
 .admin-nav-link {
   text-decoration: none;
   color: #333;
   font-size: 16px;
   font-weight: 600;
-  cursor: pointer;
   transition: 0.3s ease;
+  cursor: pointer;
 }
-
-.admin-nav-link:hover {
-  color: #5f8ab8;
-}
-
-/* =========================
-   Logout
-========================= */
 
 .admin-logout-btn {
   margin-left: auto;
@@ -62,20 +33,16 @@
   border: none;
   border-radius: 6px;
   background: #dc3545;
-  color: white;
+  color: #fff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .admin-logout-btn:hover {
   background: #c82333;
 }
-
-/* =========================
-   Dropdown
-========================= */
-
 .admin-nav-dropdown {
   position: relative;
 }
@@ -84,94 +51,94 @@
   position: absolute;
   top: 100%;
   left: 0;
-
   min-width: 180px;
-
   background: white;
-
   display: none;
-
+  flex-direction: column;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
   z-index: 1000;
-
   border-radius: 6px;
 }
-
 .admin-nav-dropdown:hover .admin-submenu {
   display: block;
 }
-
 .admin-submenu a {
-  display: block;
-
   padding: 12px 15px;
-
   color: #333;
   text-decoration: none;
+  display: block;
+  border-radius: 6px;
 }
 
 .admin-submenu a:hover {
   background: #f5f5f5;
+
+}
+/* Hamburger Button */
+.admin-menu-toggle {
+  display: none;
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
-@media screen and (max-width: 768px) {
+/* Navigation Menu */
+.admin-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+/* Mobile */
+@media (max-width: 768px) {
 
   .admin-navbar-container {
     padding: 12px 15px;
-
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 0;
   }
 
-  /* Hamburger show */
+  /* Hamburger */
   .admin-menu-toggle {
     display: flex !important;
-
     align-items: center;
     justify-content: center;
-
-    width: 40px;
-    height: 40px;
-
+    margin-left: auto;
     border: none;
     background: transparent;
-
+    color: #333;
     font-size: 24px;
-
     cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
   }
 
-  /* Menu hidden */
+  /* Hide menu */
   .admin-nav-menu {
     display: none;
-
-    width: 100%;
-
     flex-direction: column;
     align-items: stretch;
-
-    gap: 0;
-
+    gap: 5px;
+    width: 100%;
     padding-top: 10px;
   }
 
-  /* Menu open */
+  /* Show menu */
   .admin-nav-menu.active {
     display: flex !important;
   }
 
   .admin-nav-link {
+    display: block;
     width: 100%;
-    padding: 12px 5px;
+    padding: 10px 5px;
     font-size: 15px;
   }
 
@@ -182,22 +149,12 @@
 
   .admin-submenu {
     position: static;
-
     width: 100%;
-
     min-width: auto;
-
-    display: none;
-
     box-shadow: none;
-
+    border: none;
     background: #f8f8f8;
-
     margin-top: 5px;
-  }
-
-  .admin-nav-dropdown:hover .admin-submenu {
-    display: block;
   }
 
   .admin-submenu a {
@@ -207,9 +164,8 @@
   /* Logout */
   .admin-logout-btn {
     width: 100%;
-
-    margin: 10px 0 0 0;
-
+    margin-left: 0;
+    margin-top: 10px;
     padding: 10px;
   }
 }
