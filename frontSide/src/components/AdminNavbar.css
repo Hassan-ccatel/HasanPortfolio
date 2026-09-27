@@ -169,29 +169,3 @@
     padding: 10px;
   }
 }
-@media screen and (max-width: 768px) {
-  .admin-navbar {
-    display: block !important;
-    width: 100% !important;
-    min-height: 60px !important;
-    background: red !important;
-    position: relative !important;
-    z-index: 99999 !important;
-  }
-
-  .admin-navbar-container {
-    display: flex !important;
-    width: 100% !important;
-    min-height: 60px !important;
-  }
-
-  .admin-menu-toggle {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    background: yellow !important;
-    color: black !important;
-    position: relative !important;
-    z-index: 999999 !important;
-  }
-}
