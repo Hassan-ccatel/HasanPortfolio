@@ -95,7 +95,9 @@
 }
 /* Mobile */
 @media (max-width: 768px) {
-
+   .admin-navbar{
+    display: block;
+   }
   .admin-navbar-container {
     padding: 12px 15px;
     display: flex;
