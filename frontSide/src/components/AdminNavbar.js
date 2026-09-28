@@ -15,6 +15,11 @@ const AdminNavbar = () => {
 
   return (
     <nav className="admin-navbar">
+      <div className="logo-img">
+        <a href="/" className="logo">
+          <img src="/public/images/portfolio-logo.png" alt="Hassan Web Solution" />
+        </a>
+      </div>
       <div className="admin-navbar-container">
         <button className="admin-menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}>
