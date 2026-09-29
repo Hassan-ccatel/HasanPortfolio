@@ -112,7 +112,7 @@
   align-items: center;
   gap: 30px;
 }
-.active{
+.admin-navbar-nav .active{
   display: none;
   width: 100%;
   display: flex;
@@ -151,7 +151,7 @@
   }
 
   /* Show menu */
-  .active {
+  .admin-navbar-nav .active {
     display: block !important;
   }
 
