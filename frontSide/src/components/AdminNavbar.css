@@ -11,6 +11,7 @@
 
 }
 .admin-navbar-container {
+  width: 100%;
   max-width: 1230px;
   padding: 0px 15px;
   margin: auto;
