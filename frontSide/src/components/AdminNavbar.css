@@ -109,21 +109,13 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  width: 100%;
 }
 /* Mobile */
 @media (max-width: 768px) {
    .admin-navbar{
     display: block;
    }
-  .admin-navbar-container {
-    padding: 12px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0;
-  }
+  
 
   /* Hamburger */
   .admin-menu-toggle {
@@ -147,7 +139,7 @@
     align-items: stretch;
     gap: 5px;
     width: 100%;
-    padding-top: 10px;
+    
   }
 
   /* Show menu */
