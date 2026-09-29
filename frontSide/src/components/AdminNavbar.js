@@ -14,7 +14,7 @@ const AdminNavbar = () => {
   };
 
   return (
-    <nav className="admin-navbar">
+    <div className="admin-navbar">
       <div className="admin-navbar-container">
         <div className="admin-navbar-nav">
           <div className="logo-img">
@@ -64,7 +64,7 @@ const AdminNavbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

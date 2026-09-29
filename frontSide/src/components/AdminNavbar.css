@@ -93,9 +93,6 @@
   border-radius: 6px;
 }
 
-.admin-submenu a:hover {
-  background: #605959;
-}
 /* Hamburger Button */
 .admin-menu-toggle {
   display: none;
