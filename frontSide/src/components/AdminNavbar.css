@@ -32,10 +32,7 @@
   object-fit: contain;
   display: block;
 }
-.admin-navbar-container a:hover{
-  color: #5f8ab8;
-  
-}
+
 .admin-nav-link {
   text-decoration: none;
   color: #333;
@@ -110,6 +107,13 @@
   align-items: center;
   gap: 30px;
 }
+.active{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
 /* Mobile */
 @media (max-width: 768px) {
    .admin-navbar{
@@ -135,16 +139,11 @@
   /* Hide menu */
   .admin-nav-menu {
     display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 5px;
-    width: 100%;
-    
   }
 
   /* Show menu */
   .admin-nav-menu.active {
-    display: flex !important;
+    display: block !important;
   }
 
   .admin-nav-link {
