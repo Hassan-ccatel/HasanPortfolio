@@ -18,7 +18,7 @@ const AdminNavbar = () => {
       <div className="admin-navbar-container">
         <div className="admin-navbar-nav">
           <div className="logo-img">
-            <a href="/" className="logo">
+            <a href="/admin/dashboard" className="logo">
               <img src="/images/portfolio-logo.png" alt="Hassan Web Solution" />
             </a>
           </div>
