@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .admin-navbar {
   background: #ffffff;
   border-bottom: 1px solid #e8e8e8;
