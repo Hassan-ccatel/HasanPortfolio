@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import AdminNavbar from '../components/AdminNavbar';
 import SkillServices from "../services/SkillServices";
 import "./AddSkills.css";
+import { useNavigate } from 'react-router-dom';
 
 const AddSkills = () => {
-
+   const navigate = useNavigate();
     const [formData, setFormData] = useState({
         title: "",
         description: "",
@@ -54,6 +55,8 @@ const AddSkills = () => {
             <AdminNavbar />
             <div className='admin-skill-container'>
                 <div className='skill-section'>
+                  <button className='back-btn'
+                  onClick={()=> navigate("/admin/dashboard")}> ←</button>
                     <div className="create-skill-page">
                         <h1>Add Skill</h1>
                         <form onSubmit={handleSubmit}>

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { FaExternalLinkAlt, FaPaperPlane, FaTrash } from 'react-icons/fa';
 import ProjectsServices from '../../services/ProjectServices';
 import './ViewAllProjects.css';
+import { useNavigate } from 'react-router-dom';
 
 const ViewAllProjects = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     const isAdmin = localStorage.getItem("adminLoggedIn") === "true";
 
@@ -51,6 +53,8 @@ const ViewAllProjects = () => {
         <>
             <section id="projects" className="projects section">
                 <div className="container">
+                    <button className='back-btn' 
+                    onClick={()=> navigate("/admin/dashboard")}>←</button>
                     <div className="projects-heading">
                         <div>
                             <span>MY WORK</span>

@@ -22,7 +22,6 @@ const AdminDashboard = () => {
           readeMessages: response.data.data.readeMessages,
         });
       }
-      console.log("Dashboard state fetch successfully", response.data.data);
     } catch (error) {
       console.log("Error fetching dashboard state:", error);
     }
