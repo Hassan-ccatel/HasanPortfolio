@@ -6,7 +6,7 @@
 .project-page{
     background: #f5f7fb;
     min-height: 100vh;
-    padding-top: 60px;
+    padding: 60px 0px;
 }
 .project-page-session{
     max-width: 1230px;
@@ -58,12 +58,12 @@
 .create-project-page textarea,
 .create-project-page select {
     width: 100%;
-    padding: 13px 15px;
+    padding: 10px 15px;
     border: 1px solid #d1d5db;
     border-radius: 9px;
     background: #f9fafb;
     color: #1f2937;
-    font-size: 15px;
+    font-size: 13px;
     outline: none;
     transition: all 0.25s ease;
     font-family: inherit;
@@ -72,7 +72,7 @@
 /* Textarea */
 
 .create-project-page textarea {
-    min-height: 100px;
+    min-height: 80px;
     resize: vertical;
 }
 
@@ -96,7 +96,7 @@
 /* File Input */
 
 .create-project-page input[type="file"] {
-    padding: 10px;
+    padding: 9px;
     background: #f9fafb;
     cursor: pointer;
 }
