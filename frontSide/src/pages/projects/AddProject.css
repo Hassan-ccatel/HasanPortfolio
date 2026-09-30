@@ -4,18 +4,22 @@
     box-sizing: border-box;
 }
 .project-page{
-    background-color: #d1d5db;
-    height: 100vh;
+    background: #f5f7fb;
+    min-height: 100vh;
+    padding-top: 60px;
+}
+.project-page-session{
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: auto;
 }
 .create-project-page {
-    width: 100%;
-    max-width: 850px;
-    margin: 40px auto;
+    max-width: 600px;
+    margin: auto;
     padding: 35px;
     background: #ffffff;
     border-radius: 16px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
 }
 
 .create-project-page h1 {
@@ -62,14 +66,13 @@
     font-size: 15px;
     outline: none;
     transition: all 0.25s ease;
-    box-sizing: border-box;
     font-family: inherit;
 }
 
 /* Textarea */
 
 .create-project-page textarea {
-    min-height: 130px;
+    min-height: 100px;
     resize: vertical;
 }
 

@@ -61,6 +61,7 @@ const AddProject = () => {
         <>
             <AdminNavbar />
             <div className='project-page'>
+                <div className='project-page-session'>
                 <div className="create-project-page">
                     <h1>Create Project</h1>
 
@@ -149,6 +150,7 @@ const AddProject = () => {
                             Create Project
                         </button>
                     </form>
+                </div>
                 </div>
             </div>
         </>
