@@ -9,6 +9,7 @@ const AdminNavbar = () => {
 
   const logout = () => {
     localStorage.removeItem("adminLoggedIn");
+    localStorage.removeItem("token");
     navigate("/admin/login");
     setMenuOpen(false);
   };
