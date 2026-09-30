@@ -1,5 +1,12 @@
-
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.project-page{
+    background-color: #d1d5db;
+    height: 100vh;
+}
 .create-project-page {
     width: 100%;
     max-width: 850px;

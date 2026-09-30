@@ -6,21 +6,21 @@ import './AddProject.css';
 const AddProject = () => {
     const [formData, setFormData] = useState({
         title: '',
-        description: '', 
+        description: '',
         technologies: '',
         githubUrl: '',
         liveUrl: '',
         category: 'Web Development',
     });
-    const [image, setImage] = useState(null); 
+    const [image, setImage] = useState(null);
     const handleChange = (e) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setFormData((prevData) => ({
             ...prevData,
             [name]: value
         }))
-    } 
-    
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -31,14 +31,14 @@ const AddProject = () => {
             data.append('githubUrl', formData.githubUrl);
             data.append('liveUrl', formData.liveUrl);
             data.append('category', formData.category);
-            if(image) {
+            if (image) {
                 data.append("images", image);
             }
 
             const token = localStorage.getItem("token");
 
             const response = await ProjectServices.createProject(data, token);
-            
+
             alert("Project created successfully!");
             setFormData({
                 title: '',
@@ -54,100 +54,102 @@ const AddProject = () => {
             console.error("Error creating project:", error);
         }
 
-        
+
     }
-    
+
     return (
         <>
             <AdminNavbar />
-            <div className="create-project-page">
-                <h1>Create Project</h1>
+            <div className='project-page'>
+                <div className="create-project-page">
+                    <h1>Create Project</h1>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>Project Title</label>
-                        <input
-                            type="text"
-                            name="title"
-                            value={formData.title}
-                            onChange={handleChange}
-                            placeholder="Enter project title"
-                            required
-                        />
-                    </div>
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label>Project Title</label>
+                            <input
+                                type="text"
+                                name="title"
+                                value={formData.title}
+                                onChange={handleChange}
+                                placeholder="Enter project title"
+                                required
+                            />
+                        </div>
 
-                    <div>
-                        <label>Description</label>
-                        <textarea
-                            name="description"
-                            value={formData.description}
-                            onChange={handleChange}
-                            placeholder="Enter project description"
-                            required
-                        />
-                    </div>
+                        <div>
+                            <label>Description</label>
+                            <textarea
+                                name="description"
+                                value={formData.description}
+                                onChange={handleChange}
+                                placeholder="Enter project description"
+                                required
+                            />
+                        </div>
 
-                    <div>
-                        <label>Technologies</label>
-                        <input
-                            type="text"
-                            name="technologies"
-                            value={formData.technologies}
-                            onChange={handleChange}
-                            placeholder="React, Node.js, MongoDB"
-                        />
-                    </div>
+                        <div>
+                            <label>Technologies</label>
+                            <input
+                                type="text"
+                                name="technologies"
+                                value={formData.technologies}
+                                onChange={handleChange}
+                                placeholder="React, Node.js, MongoDB"
+                            />
+                        </div>
 
-                    <div>
-                        <label>GitHub URL</label>
-                        <input
-                            type="url"
-                            name="githubUrl"
-                            value={formData.githubUrl}
-                            onChange={handleChange}
-                            placeholder="https://github.com/..."
-                        />
-                    </div>
+                        <div>
+                            <label>GitHub URL</label>
+                            <input
+                                type="url"
+                                name="githubUrl"
+                                value={formData.githubUrl}
+                                onChange={handleChange}
+                                placeholder="https://github.com/..."
+                            />
+                        </div>
 
-                    <div>
-                        <label>Live URL</label>
-                        <input
-                            type="url"
-                            name="liveUrl"
-                            value={formData.liveUrl}
-                            onChange={handleChange}
-                            placeholder="https://..."
-                        />
-                    </div>
+                        <div>
+                            <label>Live URL</label>
+                            <input
+                                type="url"
+                                name="liveUrl"
+                                value={formData.liveUrl}
+                                onChange={handleChange}
+                                placeholder="https://..."
+                            />
+                        </div>
 
-                    <div>
-                        <label>Category</label>
-                        <select
-                            name="category"
-                            value={formData.category}
-                            onChange={handleChange}
-                        >
-                            <option value="Web Development">Web Development</option>
-                            <option value="WordPress">WordPress</option>
-                            <option value="React">React</option>
-                            <option value="Full Stack">Full Stack</option>
-                        </select>
-                    </div>
+                        <div>
+                            <label>Category</label>
+                            <select
+                                name="category"
+                                value={formData.category}
+                                onChange={handleChange}
+                            >
+                                <option value="Web Development">Web Development</option>
+                                <option value="WordPress">WordPress</option>
+                                <option value="React">React</option>
+                                <option value="Full Stack">Full Stack</option>
+                            </select>
+                        </div>
 
-                    <div>
-                        <label>Project Image</label>
-                        <input
-                            type="file"
-                            accept="image/*"
-                            onChange={(e) => setImage(e.target.files[0])}
-                            required
-                        />
-                    </div>
+                        <div>
+                            <label>Project Image</label>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => setImage(e.target.files[0])}
+                                required
+                            />
+                        </div>
 
-                    <button type="submit">
-                        Create Project
-                    </button>
-                </form>
+                        <button type="submit">
+                            Create Project
+                        </button>
+                    </form>
+                </div>
             </div>
         </>
     );
