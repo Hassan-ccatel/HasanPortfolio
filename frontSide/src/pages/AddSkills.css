@@ -7,11 +7,11 @@
 .admin-skill-container{
     background: #f5f7fb;
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 30px;
 }
 .skill-section{
     max-width: 1230px;
-    padding: 80px 15px;
+    padding: 0px 15px;
     margin: auto;
 }
 .back-btn {
